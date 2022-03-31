@@ -42,9 +42,9 @@ async def start(event):
      await client.send_message(log_qrup, f"ℹ️ **Yeni Kullanıcı -** {ad}")
      return await event.reply(f"{ad} {startmesaj}", buttons=(
                       [
-                       Button.inline("🎛 Komutlar", data="komutlar")
+                       Button.inline("🎛 əmrlər", data="komutlar")
                       ],
-                      [Button.url('🌱 Beni Gruba Ekle', f'https://t.me/{USERNAME}?startgroup=a')],
+                      [Button.url('🌱 Məni Qrupa əlavə et', f'https://t.me/{USERNAME}?startgroup=a')],
                       [Button.url('📣 Support', f'https://t.me/{support}'),
                        Button.url('👨🏻‍💻 Sahibim', f'https://t.me/{sahib}')]
                     ),
@@ -61,9 +61,9 @@ async def handler(event):
      ad = f"[{usr.first_name}](tg://user?id={usr.id}) "
      await event.edit(f"{ad} {startmesaj}", buttons=(
                       [
-                       Button.inline("🎛 Komutlar", data="komutlar")
+                       Button.inline("🎛 əmrlər", data="komutlar")
                       ],
-                      [Button.url('🌱 Beni Gruba Ekle', f'https://t.me/{USERNAME}?startgroup=a')],
+                      [Button.url('🌱 Məni Qrupa əlavə et', f'https://t.me/{USERNAME}?startgroup=a')],
                       [Button.url('📣 Support', f'https://t.me/{support}'),
                        Button.url('👨🏻‍💻 Sahibim', f'https://t.me/{sahib}')]
                     ),
@@ -99,14 +99,14 @@ async def mentionall(event):
     mode = "text_on_reply"
     msg = event.reply_to_msg_id
     if msg == None:
-        return await event.respond("__Eski mesajları göremiyorum! (bu mesaj beni gruba eklemeden önce yazılmış)__")
+        return await event.respond("__Mən köhnə mesajları görə bilmirəm!  (bu mesaj məni qrupa əlavə etməmişdən əvvəl yazılmışdı)__")
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
-    return await event.respond("__Etiketleme mesajı yazmadın!__")
+    return await event.respond("__Siz etiketləmə mesajı yazmamısınız 🥲!__")
   else:
-    return await event.respond("__Etiketleme için bir mesajı yanıtlayın veya bir mesaj yazın!__")
+    return await event.respond("__Etiketləmək üçün cavab verin və ya mesaj yazın!__")
     
   if mode == "text_on_cmd":
-    await client.send_message(event.chat_id, "❄️ Üye etiketleme başladı\n⏱️ İnterval - 2 saniye",
+    await client.send_message(event.chat_id, "❄️ Üzvlərin etiketlənməsi başladı\n⏱️ Interval - 2 saniyə",
                     buttons=(
                       [
                       Button.url('📣 Support', f'https://t.me/{support}')
@@ -120,7 +120,7 @@ async def mentionall(event):
       usrnum += 1
       usrtxt += f"➢ [{usr.first_name}](tg://user?id={usr.id})\n "
       if event.chat_id not in gece_tag:
-        await event.respond("⛔ Üye etiketleme işlemi durduruldu",
+        await event.respond("⛔ Üetiketləmə dayandırıldı",
                     buttons=(
                       [
                        Button.url('📣 Support', f'https://t.me/{support}')
@@ -158,11 +158,11 @@ async def mentionalladmin(event):
     mode = "text_on_reply"
     msg = event.reply_to_msg_id
     if msg == None:
-        return await event.respond("__Eski mesajları göremiyorum! (bu mesaj beni gruba eklemeden önce yazılmış)__")
+        return await event.respond("__Mən köhnə mesajları görə bilmirəm!  (bu mesaj məni qrupa əlavə etməmişdən əvvəl yazılmışdı)__")
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
-    return await event.respond("__Etiketleme mesajı yazmadın!__")
+    return await event.respond("__Etiketləmə mesajı yazmadı!__")
   else:
-    return await event.respond("__Etiketleme için bir mesajı yanıtlayın veya bir mesaj yazın!__")
+    return await event.respond("__Etiketləmək üçün cavab verin və ya mesaj yazın!__")
     
   if mode == "text_on_cmd":
     await client.send_message(event.chat_id, "❄️ Admin etiketleme başladı\n⏱️ İnterval - 2 saniye",
