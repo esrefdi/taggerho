@@ -399,14 +399,14 @@ async def stag(event):
     mode = "text_on_reply"
     msg = event.reply_to_msg_id
     if msg == None:
-        return await event.respond("__Eski mesajları göremiyorum! (bu mesaj beni gruba eklemeden önce yazılmış)__")
+        return await event.respond("__Mən köhnə mesajları görə bilmirəm!  (bu mesaj məni qrupa əlavə etməmişdən əvvəl yazılmışdı)__")
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
-    return await event.respond("__Etiketleme mesajı yazmadın!__")
+    return await event.respond("__Siz etiketləmə mesajı yazmamısınız!__")
   else:
-    return await event.respond("__Etiketleme için bir mesajı yanıtlayın veya bir mesaj yazın!__")
+    return await event.respond("__Etiketləmək üçün cavab verin və ya mesaj yazın!__")
     
   if mode == "text_on_cmd":
-    await client.send_message(event.chat_id, "❄️ Söz ile etiketleme başladı\n⏱️ İnterval - 2 saniye",
+    await client.send_message(event.chat_id, "❄️ Sözlə etiketləmə başladı\n⏱️ Interval - 2 saniyə",
                     buttons=(
                       [
                        Button.url('📣 Support', f'https://t.me/{support}')
@@ -460,14 +460,14 @@ async def rtag(event):
     mode = "text_on_reply"
     msg = event.reply_to_msg_id
     if msg == None:
-        return await event.respond("__Eski mesajları göremiyorum! (bu mesaj beni gruba eklemeden önce yazılmış)__")
+        return await event.respond("__Mən köhnə mesajları görə bilmirəm!  (bu mesaj məni qrupa əlavə etməmişdən əvvəl yazılmışdı)__")
   elif event.pattern_match.group(1) and event.reply_to_msg_id:
-    return await event.respond("__Etiketleme mesajı yazmadın!__")
+    return await event.respond("__Siz etiketləmə mesajı yazmamısınız!__")
   else:
-    return await event.respond("__Etiketleme için bir mesajı yanıtlayın veya bir mesaj yazın!__")
+    return await event.respond("__Etiketləmək üçün cavab verin və ya mesaj yazın!__")
     
   if mode == "text_on_cmd":
-    await client.send_message(event.chat_id, "❄️ Renk ile etiketleme başladı\n⏱️ İnterval - 2 saniye",
+    await client.send_message(event.chat_id, "👻 Rəng etiketlənməsi başladı\n⏱️ Interval - 2 saniyə",
                     buttons=(
                       [
                        Button.url('📣 Support', f'https://t.me/{support}')
@@ -481,7 +481,7 @@ async def rtag(event):
       usrnum += 1
       usrtxt += f"[{random.choice(renk)}](tg://user?id={usr.id}) "
       if event.chat_id not in gece_tag:
-        await event.respond("⛔ Renk ile etiketleme işlemi durduruldu",
+        await event.respond("⛔ Rəng etiketlənməsi dayandırıldı",
                     buttons=(
                       [
                        Button.url('📣 Support', f'https://t.me/{support}')
@@ -499,6 +499,6 @@ async def rtag(event):
 #########################
 
 
-print(">> Bot çalışmaktadur merak etme 🚀 @mutsuz_panda bilgi alabilirsin <<")
+print(">> Bot isleyir narahat etmeyin 🚀 @Meheerremov_313 məlumat ala bilərsiz <<")
 client.run_until_disconnected()
 run_until_disconnected()
