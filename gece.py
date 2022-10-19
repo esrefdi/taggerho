@@ -44,7 +44,7 @@ async def start(event):
                       [
                        Button.inline("🎛 əmrlər", data="komutlar")
                       ],
-                      [Button.url('🌱 Məni Qrupa əlavə et', f'https://t.me/{USERNAME}?startgroup=a')],
+                      [Button.url('🌱 Mə Qrupa əlavə et', f'https://t.me/{USERNAME}?startgroup=a')],
                       [Button.url('📣 Support', f'https://t.me/{support}'),
                        Button.url('👨🏻‍💻 Sahibim', f'https://t.me/{sahib}')]
                     ),
